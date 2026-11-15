@@ -51,20 +51,7 @@ frame ─► Preprocess (GPU) ─► LN [TensorRT] ─► ROI Sampler [PyTorch] 
 
 End-to-end latency of the ACNN variants on the Jetson Nano (Table 6 in the paper). Each value comes from 1,000 steady-state runs and includes preprocessing and postprocessing.
 
-| Model | Params (M) | FLOPs (G) | Metric | PyTorch FP32<sup>a</sup> (ms) | PyTorch FP16 (ms) | Hybrid FP32<sup>b</sup> (ms) | Hybrid FP16<sup>c</sup> (ms) | Hybrid<sup>a/b</sup> | FP16<sup>b/c</sup> | Total<sup>a/c</sup> |
-|---|---|---|---|---|---|---|---|---|---|---|
-| **ACNN-base** | 0.71 | 2.25 | P50 | 64.21 | 78.03 | 46.49 | 30.99 | 1.38× | 1.50× | 2.07× |
-| | | | P95 | 65.03 | 78.46 | 47.15 | 32.00 | 1.38× | 1.47× | 2.03× |
-| | | | P99 | 65.59 | 79.15 | 47.81 | 32.49 | 1.37× | 1.47× | 2.02× |
-| | | | Max | 68.65 | 87.96 | 52.34 | 35.02 | 1.31× | 1.49× | 1.96× |
-| **ACNN-k3** | 0.70 | 1.03 | P50 | 39.65 | 47.31 | 24.26 | **17.78** | 1.63× | 1.36× | **2.23×** |
-| | | | P95 | 39.96 | 47.71 | 24.53 | 18.11 | 1.63× | 1.35× | 2.21× |
-| | | | P99 | 40.77 | 48.53 | 25.38 | 18.83 | 1.61× | 1.35× | 2.17× |
-| | | | Max | 43.21 | 50.96 | 27.81 | 19.34 | 1.55× | 1.44× | 2.23× |
-| **ACNN-dsc** | 0.68 | 0.38 | P50 | 38.37 | 41.74 | 20.40 | 19.42 | 1.88× | 1.05× | 1.98× |
-| | | | P95 | 39.12 | 41.96 | 21.34 | 20.25 | 1.83× | 1.05× | 1.93× |
-| | | | P99 | 39.65 | 42.68 | 22.12 | 20.71 | 1.79× | 1.07× | 1.91× |
-| | | | Max | 41.21 | 44.90 | 29.51 | 25.99 | 1.40× | 1.14× | 1.59× |
+<p align="center"><img src="images/table6_e2e_latency.png" alt="Table 6: End-to-end latency of the ACNN variants" width="100%"></p>
 
 **Notes:**
 
