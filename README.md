@@ -49,19 +49,39 @@ frame ─► Preprocess (GPU) ─► LN [TensorRT] ─► ROI Sampler [PyTorch] 
 
 ## 📊 Results
 
-End-to-end latency (P50) on the Jetson Nano, measured over 1,000 steady-state runs. It includes preprocessing and postprocessing.
+End-to-end latency of the ACNN variants on the Jetson Nano (Table 6 in the paper). Each value comes from 1,000 steady-state runs and includes preprocessing and postprocessing.
 
-| Model | PyTorch FP32 | Hybrid FP32 | Hybrid FP16 | Speedup |
-|---|---|---|---|---|
-| ACNN-base | 64.21 ms | – | – | – |
-| ACNN-k3 | 39.65 ms | 24.26 ms | **17.78 ms** | **2.23×** |
-| ACNN-dsc | 38.37 ms | 20.40 ms | – | 1.88× (FP32) |
+| Model | Params (M) | FLOPs (G) | Metric | PyTorch FP32<sup>a</sup> (ms) | PyTorch FP16 (ms) | Hybrid FP32<sup>b</sup> (ms) | Hybrid FP16<sup>c</sup> (ms) | Hybrid<sup>a/b</sup> | FP16<sup>b/c</sup> | Total<sup>a/c</sup> |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **ACNN-base** | 0.71 | 2.25 | P50 | 64.21 | 78.03 | 46.49 | 30.99 | 1.38× | 1.50× | 2.07× |
+| | | | P95 | 65.03 | 78.46 | 47.15 | 32.00 | 1.38× | 1.47× | 2.03× |
+| | | | P99 | 65.59 | 79.15 | 47.81 | 32.49 | 1.37× | 1.47× | 2.02× |
+| | | | Max | 68.65 | 87.96 | 52.34 | 35.02 | 1.31× | 1.49× | 1.96× |
+| **ACNN-k3** | 0.70 | 1.03 | P50 | 39.65 | 47.31 | 24.26 | **17.78** | 1.63× | 1.36× | **2.23×** |
+| | | | P95 | 39.96 | 47.71 | 24.53 | 18.11 | 1.63× | 1.35× | 2.21× |
+| | | | P99 | 40.77 | 48.53 | 25.38 | 18.83 | 1.61× | 1.35× | 2.17× |
+| | | | Max | 43.21 | 50.96 | 27.81 | 19.34 | 1.55× | 1.44× | 2.23× |
+| **ACNN-dsc** | 0.68 | 0.38 | P50 | 38.37 | 41.74 | 20.40 | 19.42 | 1.88× | 1.05× | 1.98× |
+| | | | P95 | 39.12 | 41.96 | 21.34 | 20.25 | 1.83× | 1.05× | 1.93× |
+| | | | P99 | 39.65 | 42.68 | 22.12 | 20.71 | 1.79× | 1.07× | 1.91× |
+| | | | Max | 41.21 | 44.90 | 29.51 | 25.99 | 1.40× | 1.14× | 1.59× |
+
+**Notes:**
+
+- **Hybrid<sup>a/b</sup>** compares PyTorch and hybrid runtimes at the same FP32 precision.
+- **FP16<sup>b/c</sup>** is the extra gain from lowering precision inside the hybrid runtime.
+- **Total<sup>a/c</sup>** is the overall speedup from PyTorch FP32 to hybrid FP16.
+- **Accuracy:**
+  - At the same precision, hybrid conversion barely changes accuracy.
+  - Reducing precision from FP32 to FP16 added about 2 misclassifications on average, an accuracy drop of about 0.17%p on the 1,200-image test set.
+
+**Highlights:**
 
 - The fastest configuration is **hybrid FP16 ACNN-k3 at 17.78 ms (56.2 fps)**. That is 2.16× faster than the fastest PyTorch model.
 - GPU-integrated preprocessing reduced preprocessing time from 5.125 ms (CPU-only, FP32) to 2.116 ms (GPU, FP16), a 2.42× speedup. It also reduced latency jitter.
 - Under TensorRT FP16, ACNN-k3 ran faster than ACNN-dsc even though ACNN-k3 has about 3× more FLOPs.
 
-> See the paper for the full tables, including P95/P99/Max latency, stepwise profiling and CPU–GPU workload analysis.
+> See the paper for stepwise profiling and CPU–GPU workload analysis.
 
 ## 📂 Repository Structure
 
