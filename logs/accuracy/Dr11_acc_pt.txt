@@ -1,0 +1,173 @@
+PyTorch accuracy test
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_3.pth
+cuda:0 / FP32
+
+Forwarding model...
+148 - p3709 (60.7%) <---  p1069_148_3.jpg
+173 - p1071 (52.5%) <---  p1069_173_3.jpg
+196 - p3709 (88.4%) <---  p1069_196_3.jpg
+213 - p3709 (76.5%) <---  p1069_213_3.jpg
+433 - p3709 (84.0%) <---  p1071_133_3.jpg
+Error 개수 : 5   Accuracy : 99.58%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_3.pth
+cuda:0 / FP16
+
+Forwarding model...
+148 - p3709 (68.7%) <---  p1069_148_3.jpg
+166 - p3709 (50.8%) <---  p1069_166_3.jpg
+173 - p1071 (47.5%) <---  p1069_173_3.jpg
+196 - p3709 (80.9%) <---  p1069_196_3.jpg
+213 - p3709 (74.1%) <---  p1069_213_3.jpg
+433 - p3709 (83.4%) <---  p1071_133_3.jpg
+Error 개수 : 6   Accuracy : 99.50%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_0.pth
+cuda:0 / FP32
+
+Forwarding model...
+693 - p3709 (73.0%) <---  p3707_093_3.jpg
+Error 개수 : 1   Accuracy : 99.92%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_0.pth
+cuda:0 / FP16
+
+Forwarding model...
+693 - p3709 (86.1%) <---  p3707_093_3.jpg
+Error 개수 : 1   Accuracy : 99.92%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_1.pth
+cuda:0 / FP32
+
+Forwarding model...
+190 - p1071 (48.8%) <---  p1069_190_3.jpg
+213 - p3707 (92.9%) <---  p1069_213_3.jpg
+433 - p3709 (66.8%) <---  p1071_133_3.jpg
+558 - p3709 (46.3%) <---  p1071_258_3.jpg
+572 - p1069 (47.6%) <---  p1071_272_3.jpg
+Error 개수 : 5   Accuracy : 99.58%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_1.pth
+cuda:0 / FP16
+
+Forwarding model...
+190 - p1071 (50.0%) <---  p1069_190_3.jpg
+213 - p3707 (92.4%) <---  p1069_213_3.jpg
+433 - p3709 (72.6%) <---  p1071_133_3.jpg
+558 - p3709 (43.2%) <---  p1071_258_3.jpg
+572 - p3709 (47.2%) <---  p1071_272_3.jpg
+Error 개수 : 5   Accuracy : 99.58%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_2.pth
+cuda:0 / FP32
+
+Forwarding model...
+213 - p3709 (39.5%) <---  p1069_213_3.jpg
+572 - p3707 (81.3%) <---  p1071_272_3.jpg
+Error 개수 : 2   Accuracy : 99.83%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_2.pth
+cuda:0 / FP16
+
+Forwarding model...
+173 - p1071 (51.6%) <---  p1069_173_3.jpg
+213 - p3707 (38.3%) <---  p1069_213_3.jpg
+572 - p3707 (85.2%) <---  p1071_272_3.jpg
+Error 개수 : 3   Accuracy : 99.75%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_4.pth
+cuda:0 / FP32
+
+Forwarding model...
+796 - p3709 (99.7%) <---  p3707_196_3.jpg
+Error 개수 : 1   Accuracy : 99.92%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_4.pth
+cuda:0 / FP16
+
+Forwarding model...
+796 - p3709 (99.8%) <---  p3707_196_3.jpg
+847 - p3709 (67.7%) <---  p3707_247_3.jpg
+861 - p3709 (51.0%) <---  p3707_261_3.jpg
+Error 개수 : 3   Accuracy : 99.75%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_7.pth
+cuda:0 / FP32
+
+Forwarding model...
+433 - p3707 (70.7%) <---  p1071_133_3.jpg
+Error 개수 : 1   Accuracy : 99.92%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_7.pth
+cuda:0 / FP16
+
+Forwarding model...
+433 - p3707 (74.4%) <---  p1071_133_3.jpg
+836 - p3709 (54.3%) <---  p3707_236_3.jpg
+Error 개수 : 2   Accuracy : 99.83%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_5.pth
+cuda:0 / FP32
+
+Forwarding model...
+213 - p3707 (70.5%) <---  p1069_213_3.jpg
+572 - p1069 (38.5%) <---  p1071_272_3.jpg
+717 - p1071 (55.1%) <---  p3707_117_3.jpg
+836 - p3709 (59.5%) <---  p3707_236_3.jpg
+Error 개수 : 4   Accuracy : 99.67%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_5.pth
+cuda:0 / FP16
+
+Forwarding model...
+196 - p1071 (51.0%) <---  p1069_196_3.jpg
+213 - p3707 (59.5%) <---  p1069_213_3.jpg
+572 - p1069 (49.8%) <---  p1071_272_3.jpg
+680 - p1071 (66.9%) <---  p3707_080_3.jpg
+717 - p1071 (69.4%) <---  p3707_117_3.jpg
+836 - p3709 (54.1%) <---  p3707_236_3.jpg
+Error 개수 : 6   Accuracy : 99.50%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_6.pth
+cuda:0 / FP32
+
+Forwarding model...
+190 - p1071 (58.9%) <---  p1069_190_3.jpg
+693 - p3709 (61.7%) <---  p3707_093_3.jpg
+709 - p3709 (92.0%) <---  p3707_109_3.jpg
+836 - p3709 (91.2%) <---  p3707_236_3.jpg
+Error 개수 : 4   Accuracy : 99.67%
+
+Loading the PyTorch ACNN-opt model
+/home/jetson/onnx2trt-env/acc_model/acc_6.pth
+cuda:0 / FP16
+
+Forwarding model...
+173 - p1071 (48.8%) <---  p1069_173_3.jpg
+190 - p1071 (57.4%) <---  p1069_190_3.jpg
+680 - p1071 (52.4%) <---  p3707_080_3.jpg
+693 - p3709 (77.6%) <---  p3707_093_3.jpg
+709 - p3709 (92.1%) <---  p3707_109_3.jpg
+836 - p3709 (91.2%) <---  p3707_236_3.jpg
+Error 개수 : 6   Accuracy : 99.50%
+
+
+------------------
+(program exited with code: 0)
+Press return to continue
